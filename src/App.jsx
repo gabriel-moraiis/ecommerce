@@ -4,12 +4,7 @@ import Navigation from './routes/navigation/navigation.component';
 import Authentication from './routes/authentication/authentication.component';
 
 import defaultTheme from './styles/defaultTheme';
-
-function Layout() {
-  return (
-    <h1>Layout</h1>
-  );
-}
+import Home from './routes/Home/home.component';
 
 function Shop() {
   return (
@@ -22,7 +17,7 @@ function App() {
     <ThemeProvider theme={defaultTheme}>
       <Routes>
         <Route path="/" element={<Navigation />}>
-          <Route index element={<Layout />} />
+          <Route index element={<Home />} />
           <Route path="cadastro" element={<Authentication />} />
           <Route path="catalogo" element={<Shop />} />
         </Route>

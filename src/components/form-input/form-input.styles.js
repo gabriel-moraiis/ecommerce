@@ -1,10 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const labelShrink = css`
+  top: 10px;
+  font-size: 12px;
+  `;
 
 export const Container = styled.div`
-  @mixin label-shrink {
-    background-color: blue;
-  }
-
   position: relative;
   margin: 20px 0;
 
@@ -19,18 +20,23 @@ export const Container = styled.div`
     border-bottom: 2px solid black;
     margin: 25px 0;
 
-    &:focus{
-      @include label-shrink();
+    &:focus ~ label{
+      ${labelShrink}
     }
   }
 
   input[type='password']{
     letter-spacing: 1px;
   }
+`;
 
-  label {
+export const FormInputLabel = styled.label`
     position: absolute;
-    left: 5px;
-    top: 5px;
-  }
+    left: 6px;
+    top: 45px;
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.4s ease-in;
+
+    ${({ shrink }) => shrink && labelShrink}
 `;

@@ -1,11 +1,11 @@
-import { Container } from './form-input.styles';
+import { Container, FormInputLabel } from './form-input.styles';
 
 function FormInput({ label, ...otherProps }) {
   return (
     <Container>
       <input {...otherProps} />
       {label
-         && <label>{label}</label>}
+         && <FormInputLabel shrink={otherProps.value.length}>{label}</FormInputLabel>}
     </Container>
   );
 }
