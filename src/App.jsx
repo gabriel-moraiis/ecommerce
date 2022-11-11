@@ -5,12 +5,7 @@ import Authentication from './routes/authentication/authentication.component';
 
 import defaultTheme from './styles/defaultTheme';
 import Home from './routes/Home/home.component';
-
-function Shop() {
-  return (
-    <h1>Catalogo</h1>
-  );
-}
+import Catalog from './routes/catalog/catalog.component';
 
 function App() {
   return (
@@ -19,7 +14,7 @@ function App() {
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
           <Route path="cadastro" element={<Authentication />} />
-          <Route path="catalogo" element={<Shop />} />
+          <Route path="catalogo/*" element={<Catalog />} />
         </Route>
       </Routes>
     </ThemeProvider>
