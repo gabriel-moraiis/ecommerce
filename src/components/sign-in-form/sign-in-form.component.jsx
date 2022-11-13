@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signInWithGooglePopup, signInAuthWithEmailAndPassword } from '../../utils/firebaseApp';
-import { Button } from '../Button';
+import Button, { BUTTON_TYPES } from '../button/button.component';
 import FormInput from '../form-input/form-input.component';
 import { ButtonsContainer, Container } from './sign-in-form.styles';
 
@@ -68,13 +68,14 @@ function SignInForm() {
         <ButtonsContainer>
           <Button
             type="submit"
+            buttonType={BUTTON_TYPES.inverted}
           >
             Login com email e senha
           </Button>
           <Button
             onClick={signInWithGoogle}
-            buttonType="googleSignIn"
             type="button"
+            buttonType={BUTTON_TYPES.googleSignIn}
           >
             Login com Google
           </Button>

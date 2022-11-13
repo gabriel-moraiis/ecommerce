@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Body = styled.div`
+  width: 150px;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -11,8 +12,12 @@ export const Body = styled.div`
   opacity: 0.7;
   padding: 20px;
   transition: all 0.4s ease-in;
+
+  h2{
+    text-transform: uppercase;
+  }
   
-  h2 {
+  span {
     text-transform: uppercase;
   }
 `;
@@ -38,6 +43,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-color: green;
+  position: relative;
 
   &:hover {
     

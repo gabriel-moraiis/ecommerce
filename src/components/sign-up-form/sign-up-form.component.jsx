@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from '../Button';
+import Button, { BUTTON_TYPES } from '../button/button.component';
 import FormInput from '../form-input/form-input.component';
 import { Container } from './sign-up-form.styles';
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebaseApp';
@@ -83,7 +83,10 @@ function SignUpForm() {
         onChange={handleChange}
         value={confirmPassword}
       />
-      <Button type="submit">
+      <Button
+        type="submit"
+        buttonType={BUTTON_TYPES.inverted}
+      >
         Cadastrar-se
       </Button>
     </Container>

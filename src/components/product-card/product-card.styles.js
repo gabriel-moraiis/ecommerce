@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Button } from '../Button';
 
 export const BackgroundImg = styled.div`
   width: 100%;
@@ -20,24 +19,33 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
-  ${Button}{
+  button{
     width: 80%;
     position: absolute;
-    top: 255px;
-    opacity: 0.6;
+    top: 220px;
     display: none;
   }
 
   &:hover {
     
 
-    ${Button} {
+    button {
       display: block;
+    }
+
+    ${BackgroundImg}{
+      opacity: 0.7;
     }
   }
 `;
 
 export const Description = styled.div`
-  display: flex !important;
-  justify-content: space-between !important;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+
+  span {
+    font-size: 18px;
+  }
 `;

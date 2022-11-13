@@ -34,5 +34,7 @@ module.exports = {
     'react/jsx-no-constructed-context-values': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
+    'react/function-component-definition': 'off',
+    'arrow-body-style': 'off',
   },
 };

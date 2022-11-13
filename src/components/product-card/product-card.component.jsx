@@ -1,4 +1,4 @@
-import { Button } from '../Button';
+import Button from '../button/button.component';
 
 import { BackgroundImg, Container, Description } from './product-card.styles';
 
