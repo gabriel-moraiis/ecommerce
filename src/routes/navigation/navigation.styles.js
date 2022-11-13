@@ -11,8 +11,9 @@ export const Container = styled.div`
 `;
 
 export const LogoContainer = styled.div`
+  width: 30%;
   img {
-    width: 5%;
+    width: 20%;
   }
 `;
 

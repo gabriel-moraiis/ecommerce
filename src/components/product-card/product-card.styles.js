@@ -9,11 +9,12 @@ export const BackgroundImg = styled.div`
 `;
 
 export const Container = styled.div`
-  width: 100%;
+  min-width: 23%;
+  width: auto;
   height: 350px;
   margin-right: 20px;
   margin-bottom: 25px;
-  flex: 1 1 auto;
+  flex-shrink: 1;
   position: relative;
   display: flex;
   flex-direction: column;

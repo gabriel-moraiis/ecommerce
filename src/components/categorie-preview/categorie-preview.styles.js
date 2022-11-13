@@ -5,6 +5,7 @@ export const Preview = styled.div`
 `;
 
 export const Title = styled.h2`
+  width: 5%;
   margin-bottom: 16px;
   cursor: pointer;
   text-transform: uppercase;

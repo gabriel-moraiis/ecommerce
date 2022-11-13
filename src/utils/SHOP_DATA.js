@@ -1,6 +1,6 @@
 export default [
   {
-    title: 'Chapéus',
+    title: 'chapéus',
     items: [
       {
         id: 1,
@@ -59,7 +59,7 @@ export default [
     ],
   },
   {
-    title: 'Tênis',
+    title: 'tênis',
     items: [
       {
         id: 10,
@@ -112,7 +112,7 @@ export default [
     ],
   },
   {
-    title: 'Jaquetas',
+    title: 'jaquetas',
     items: [
       {
         id: 18,
@@ -147,7 +147,7 @@ export default [
     ],
   },
   {
-    title: 'Mulheres',
+    title: 'mulheres',
     items: [
       {
         id: 23,
@@ -194,7 +194,7 @@ export default [
     ],
   },
   {
-    title: 'Homens',
+    title: 'homens',
     items: [
       {
         id: 30,
