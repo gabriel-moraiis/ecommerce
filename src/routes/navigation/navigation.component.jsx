@@ -2,8 +2,11 @@ import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
 import logo from '../../assets/images/logo.png';
+import CartIcon from '../../components/cart-icon/cart-icon.component';
 
-import { Container, ContainerLinks, LogoContainer } from './navigation.styles';
+import {
+  Container, ContainerLinks, LogoContainer,
+} from './navigation.styles';
 
 import { UserContext } from '../../contexts/UserContext/user-context.component';
 import { signOutUser } from '../../utils/firebaseApp';
@@ -31,6 +34,7 @@ function Navigation() {
           ) : (
             <Link to="/cadastro">Cadastrar-se</Link>
           )}
+          <CartIcon />
         </ContainerLinks>
       </Container>
       <Outlet />

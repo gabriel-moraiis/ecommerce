@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 40px;
 `;
 
 export const LogoContainer = styled.div`
@@ -18,7 +18,7 @@ export const LogoContainer = styled.div`
 `;
 
 export const ContainerLinks = styled.div`
-  width: 50%;
+  width: 80%;
   height: 100%;
   display: flex;
   align-items: center;
