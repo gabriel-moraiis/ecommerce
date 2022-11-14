@@ -12,6 +12,8 @@ export const Container = styled.div`
 
 export const LogoContainer = styled.div`
   width: 30%;
+  display: flex;
+  
   img {
     width: 20%;
   }
