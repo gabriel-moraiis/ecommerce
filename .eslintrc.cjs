@@ -36,5 +36,6 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': 'off',
     'react/function-component-definition': 'off',
     'arrow-body-style': 'off',
+    'no-param-reassign': 'off',
   },
 };

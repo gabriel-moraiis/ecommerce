@@ -5,7 +5,7 @@ import logo from '../../assets/images/logo.png';
 import CartIcon from '../../components/cart-icon/cart-icon.component';
 
 import {
-  Container, ContainerLinks, LogoContainer,
+  Container, ContainerLinks, LinkContainer, LogoContainer,
 } from './navigation.styles';
 
 import { UserContext } from '../../contexts/user-context.component';
@@ -24,11 +24,11 @@ function Navigation() {
   return (
     <>
       <Container>
-        <Link to="/" className="logo-container">
+        <LinkContainer to="/" className="logo-container">
           <LogoContainer>
             <img src={logo} alt="Logo" />
           </LogoContainer>
-        </Link>
+        </LinkContainer>
 
         <ContainerLinks>
           <Link to="/catalogo">Catalogo</Link>

@@ -21,5 +21,17 @@ export const CartDropdownContainer = styled.div`
 `;
 
 export const ItemsContainer = styled.div`
-  
+  height: 80%;
+  overflow-y: auto;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+  background-color: transparent;
+  width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  border: 3px solid rgb(238, 238, 238);
+  }
 `;

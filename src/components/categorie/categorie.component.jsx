@@ -11,10 +11,18 @@ const Categorie = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const categorieFind = categories.find((categorie) => {
-      return categorie.title.toLowerCase() === categorieRoute.toLowerCase();
-    });
-    setProducts(categorieFind.items);
+    try {
+      const categorieFind = categories.find((categorie) => {
+        return categorie.title.toLowerCase() === categorieRoute.toLowerCase();
+      });
+      if (categorieFind) {
+        setProducts(categorieFind.items);
+      } else {
+        return;
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }, [categorieRoute, categories]);
   return (
     <Container>

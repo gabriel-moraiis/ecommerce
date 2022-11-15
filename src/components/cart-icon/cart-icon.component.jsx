@@ -5,14 +5,14 @@ import IconCart from '../icon-cart/icon-cart.component';
 import { CartCount, CartIconContainer } from './cart-icon.styles';
 
 const CartIcon = () => {
-  const { cartToggle } = useContext(CartContext);
+  const { cartToggle, cartCount } = useContext(CartContext);
 
   return (
     <CartIconContainer
       onClick={cartToggle}
     >
       <IconCart />
-      <CartCount>0</CartCount>
+      <CartCount>{cartCount}</CartCount>
     </CartIconContainer>
   );
 };

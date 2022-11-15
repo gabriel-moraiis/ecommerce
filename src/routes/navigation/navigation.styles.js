@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   width: 100%;
@@ -11,21 +12,21 @@ export const Container = styled.div`
 `;
 
 export const LogoContainer = styled.div`
-  width: 30%;
+  width: 100%;
   display: flex;
   
   img {
-    width: 20%;
+    width: 100%;
   }
 `;
 
 export const ContainerLinks = styled.div`
-  width: 80%;
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  gap: 10px;
+  justify-content: flex-end;
+  gap: 16px;
   
   a, span{
     text-decoration: none;
@@ -40,4 +41,8 @@ export const ContainerLinks = styled.div`
     }
   }
 
+`;
+
+export const LinkContainer = styled(Link)`
+  width: 5%;
 `;
