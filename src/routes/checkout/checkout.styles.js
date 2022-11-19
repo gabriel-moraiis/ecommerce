@@ -25,3 +25,10 @@ export const HeaderBlock = styled.div`
         width: 8%;
     }
 `;
+
+export const Total = styled.span`
+    font-weight: bold;
+    font-size: 36px;
+    margin-top: 35px;
+    margin-left: auto;
+`;
