@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'PT Serif', serif;
+    font-family: 'Open Sans', 'PT Serif', serif;
     background-color: #E6E6E6;
     margin: 0;
     -webkit-font-smoothing: antialiased;
