@@ -7,13 +7,21 @@ import {
 
 const ItemCheckout = ({ item }) => {
     const {
-        name, imageUrl, price, quantity, id,
+        name, imageUrl, price, quantity,
     } = item;
 
-    const { removeItemToCart } = useContext(CartContext);
+    const { removeItemToCart, addItemToCart, decrementItemToCart } = useContext(CartContext);
 
     const handleClickRemove = () => {
-        removeItemToCart(id);
+        removeItemToCart(item);
+    };
+
+    const handleClickArrowIncrement = () => {
+        addItemToCart(item);
+    };
+
+    const handleClickArrowDecrement = () => {
+        decrementItemToCart(item);
     };
 
     return (
@@ -23,9 +31,9 @@ const ItemCheckout = ({ item }) => {
         </ImageContainer>
         <Description>{name}</Description>
         <Quantity>
-          <Arrow>&#60;</Arrow>
+          <Arrow onClick={handleClickArrowDecrement}>&#60;</Arrow>
           {quantity}
-          <Arrow>&#62;</Arrow>
+          <Arrow onClick={handleClickArrowIncrement}>&#62;</Arrow>
         </Quantity>
         <Price>{price}</Price>
         <Remove onClick={handleClickRemove}>&#935;</Remove>

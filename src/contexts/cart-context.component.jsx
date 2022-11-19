@@ -29,12 +29,22 @@ export const CartProvider = ({ children }) => {
         setTotal(totalCart);
     };
 
-    const removeItemToCart = (id) => {
+    const removeItemToCart = (item) => {
         const cartItemsFiltered = cartItems.filter((cartItem) => {
-            return cartItem.id !== id;
+            return cartItem.id !== item.id;
         });
 
         setCartItems(cartItemsFiltered);
+    };
+
+    const decrementItemToCart = (item) => {
+        if (item.quantity === 1) removeItemToCart(item);
+        const cartItemsMapped = cartItems.map((cartItem) => {
+            if (cartItem.id === item.id) cartItem.quantity -= 1;
+            return cartItem;
+        });
+
+        setCartItems(cartItemsMapped);
     };
 
     useEffect(() => {
@@ -58,6 +68,7 @@ export const CartProvider = ({ children }) => {
         cartCount,
         removeItemToCart,
         total,
+        decrementItemToCart,
     };
 
     return (
