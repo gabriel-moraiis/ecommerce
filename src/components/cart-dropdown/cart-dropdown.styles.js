@@ -35,3 +35,8 @@ export const ItemsContainer = styled.div`
   border: 3px solid rgb(238, 238, 238);
   }
 `;
+
+export const EmptyMessage = styled.span`
+    text-align: center;
+    margin-top: 45px;
+`;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Button from '../../components/button/button.component';
 
 export const Header = styled.div`
     width: 100%;
@@ -10,9 +11,9 @@ export const Header = styled.div`
 `;
 
 export const Container = styled.div`
-    width: 55%;
+    width: 60%;
     min-height: 90vh;
-    margin: 50px auto 0px;
+    margin: 50px auto 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,6 +30,16 @@ export const HeaderBlock = styled.div`
 export const Total = styled.span`
     font-weight: bold;
     font-size: 36px;
-    margin-top: 35px;
-    margin-left: auto;
+`;
+
+export const ButtonEmpty = styled(Button)`
+
+`;
+
+export const Footer = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
 `;

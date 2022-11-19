@@ -55,6 +55,10 @@ export const CartProvider = ({ children }) => {
         setCartCount(itemsTotal);
     };
 
+    const emptyCart = () => {
+        setCartItems([]);
+    };
+
     useEffect(() => {
         countItemsCart();
     }, [cartItems]);
@@ -77,6 +81,7 @@ export const CartProvider = ({ children }) => {
         removeItemToCart,
         total,
         decrementItemToCart,
+        emptyCart,
     };
 
     return (

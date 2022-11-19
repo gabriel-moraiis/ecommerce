@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const ItemCartContainer = styled.div`
-  width: 80%;
+  width: 100%;
+  height: 80px;
   display: flex;
   justify-content: flex-start;
   margin-bottom: 16px;
@@ -11,18 +12,16 @@ export const Description = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-`;
-
-export const ImageContainer = styled.div`
-  width: 100%;
+  padding-left: 30px;
+  font-weight: 700;
 `;
 
 export const Image = styled.img`
-width: 60%;
+    width: 30%;
 `;
 
 export const Title = styled.span`
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 8px;
 `;
 

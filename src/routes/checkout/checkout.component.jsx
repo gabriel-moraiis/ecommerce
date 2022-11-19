@@ -1,12 +1,14 @@
 import { useContext } from 'react';
 import ItemCheckout from '../../components/item-checkout/item-checkout.component';
 import { CartContext } from '../../contexts/cart-context.component';
+import Button from '../../components/button/button.component';
 import {
- Container, Header, HeaderBlock, Total,
+    ButtonEmpty,
+ Container, Footer, Header, HeaderBlock, Total,
 } from './checkout.styles';
 
 const Checkout = () => {
-  const { cartItems, total } = useContext(CartContext);
+  const { cartItems, total, emptyCart } = useContext(CartContext);
 
   return (
     <Container>
@@ -30,10 +32,15 @@ const Checkout = () => {
       {cartItems.map((item) => (
         <ItemCheckout key={item.id} item={item} />
       ))}
-      <Total>
-        Total: $
-        {total}
-      </Total>
+      <Footer>
+        <ButtonEmpty onClick={emptyCart}>
+          Esvaziar Carrinho
+        </ButtonEmpty>
+        <Total>
+          Total: $
+          {total}
+        </Total>
+      </Footer>
     </Container>
   );
 };
