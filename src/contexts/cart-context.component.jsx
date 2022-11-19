@@ -47,8 +47,16 @@ export const CartProvider = ({ children }) => {
         setCartItems(cartItemsMapped);
     };
 
+    const countItemsCart = () => {
+        const itemsTotal = cartItems.reduce((acc, cartItem) => {
+            return acc + cartItem.quantity;
+        }, 0);
+
+        setCartCount(itemsTotal);
+    };
+
     useEffect(() => {
-        setCartCount(cartItems.length);
+        countItemsCart();
     }, [cartItems]);
 
     useEffect(() => {
