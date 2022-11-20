@@ -2,7 +2,9 @@
 
 Projeto construído com o objetivo de mostrar meus conhecimentos no react e suas principais bibliotecas, além disso também para contemplar meu portfólio, ajudando a conseguir a tão sonhada primeira vaga.
 
-###Ferramentas utilizadas:
+**Link do Projeto:** <https://preeminent-salmiakki-b0e169.netlify.app>
+
+### Ferramentas utilizadas:
 
 - Optei por utilizar o vite para iniciar, por ser mais rápido
 - Eslint para padronização do código
@@ -11,7 +13,7 @@ Projeto construído com o objetivo de mostrar meus conhecimentos no react e suas
 - Na parte de estilização optei por utilizar a biblioteca styled components
 
 
-###Funcionalidades do projeto:
+### Funcionalidades do projeto:
 
 - Na página inicial podemos escolher de quais categorias temos preferência em ver os produtos, ao clicar, é redirecionado para um componente que mostra todos os produtos da categoria escolhida, o qual contém cards, com a foto, nome preço do produto, ao clicar no botão adicionar produto, o mesmo é adicionado ao carrinho de compras na parte superior da página, onde o número de itens é atualizado automaticamente, ao clicarmos no carrinho, temos uma lista dropdown dos itens que adicionamos, que mostra as mesmas informações dos cards, porém em tamanho reduzido, mas com um detalhe de que ao adicionarmos um produto no carrinho, adicionamos também uma propriedade que mostra a quantidade do produto adicionado, se clicarmos para adicionar um mesmo item que já existe no carrinho, ele aumenta a unidade.
 
@@ -21,7 +23,7 @@ Projeto construído com o objetivo de mostrar meus conhecimentos no react e suas
 
 - Na página de checkout, temos uma lista dos produtos escolhidos, onde podemos incrementar ou decrementar a quantidade de itens daquele produto, através das setas, ou se clicarmos no X, removemos todas as quantidades daquele produto do carrinho, e mais abaixo vemos o valor total de todos os produtos escolhidos, também podemos esvaziar o carrinho de compras ao clicar no botão esvaziar carrinho.
 
-####Considerações Finais:
+#### Considerações Finais:
 
 A aplicação ainda não está totalmente pronta, vou implementar para mostrar o carrinho de compras do usuario, mesmo ele saindo da aplicação e voltando depois, ao logar no WEB APP, ele irá ver seu carrinho com os itens que ele havia escolhido anteriormente.
 
