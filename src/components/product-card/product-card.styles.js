@@ -11,7 +11,7 @@ export const BackgroundImg = styled.div`
 export const Container = styled.div`
   min-width: 23%;
   width: auto;
-  height: 450px;
+  height: 350px;
   margin-right: 20px;
   margin-bottom: 25px;
   flex-shrink: 1;
