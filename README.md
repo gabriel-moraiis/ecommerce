@@ -25,7 +25,7 @@ Projeto construído com o objetivo de mostrar meus conhecimentos no react e suas
 
 #### Considerações Finais:
 
-A aplicação ainda não está totalmente pronta, vou implementar para mostrar o carrinho de compras do usuario, mesmo ele saindo da aplicação e voltando depois, ao logar no WEB APP, ele irá ver seu carrinho com os itens que ele havia escolhido anteriormente.
+A aplicação ainda não está totalmente pronta, vou implementar para mostrar o carrinho de compras do usuario, mesmo ele saindo da aplicação e voltando depois, ao logar no WEB APP, ele irá ver seu carrinho com os itens que ele havia escolhido anteriormente, bem como criar uma área para o usuário autenticado, verificar seus pedidos, etc...
 
 Também pretendo implementar a biblioteca Redux no projeto, para otimizar o fluxo de dados entre componentes.
 
