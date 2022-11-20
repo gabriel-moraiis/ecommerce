@@ -37,7 +37,7 @@ const Checkout = () => {
           Esvaziar Carrinho
         </ButtonEmpty>
         <Total>
-          Total: $
+          Total: R$
           {total}
         </Total>
       </Footer>

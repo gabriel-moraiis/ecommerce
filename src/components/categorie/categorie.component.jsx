@@ -12,11 +12,11 @@ const Categorie = () => {
 
   useEffect(() => {
     try {
-      const categorieFind = categories.find((categorie) => {
-        return categorie.title.toLowerCase() === categorieRoute.toLowerCase();
+      const categorieFind = Object.keys(categories).find((categorie) => {
+        return categorie.toLowerCase() === categorieRoute.toLowerCase();
       });
       if (categorieFind) {
-        setProducts(categorieFind.items);
+        setProducts(categories[categorieFind]);
       } else {
         return;
       }

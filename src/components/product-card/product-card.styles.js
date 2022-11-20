@@ -11,7 +11,7 @@ export const BackgroundImg = styled.div`
 export const Container = styled.div`
   min-width: 23%;
   width: auto;
-  height: 350px;
+  height: 450px;
   margin-right: 20px;
   margin-bottom: 25px;
   flex-shrink: 1;
@@ -28,7 +28,7 @@ export const Container = styled.div`
   }
 
   &:hover {
-    
+
 
     button {
       display: block;
@@ -42,9 +42,11 @@ export const Container = styled.div`
 
 export const Description = styled.div`
   width: 100%;
+  height:10px;
   display: flex;
   justify-content: space-between;
   margin-top: 14px;
+  font-weight: 700;
 
   span {
     font-size: 18px;

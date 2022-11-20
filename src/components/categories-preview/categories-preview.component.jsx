@@ -1,13 +1,18 @@
-import shopData from '../../utils/SHOP_DATA';
+import { useContext } from 'react';
+import { CategoriesContext } from '../../contexts/categoriesContext.component';
 import CategoriePreview from '../categorie-preview/categorie-preview.component';
 import { Container } from './categories-preview.styles';
 
 function CategoriesPreview() {
+    const { categories } = useContext(CategoriesContext);
+
   return (
     <Container>
-      {shopData.map((categorie) => (
-        <CategoriePreview key={categorie.title} categorie={categorie} />
-      ))}
+      {
+        Object.keys(categories).map((categorie) => (
+          <CategoriePreview key={categorie} title={categorie} items={categories[categorie]} />
+        ))
+      }
     </Container>
   );
 }

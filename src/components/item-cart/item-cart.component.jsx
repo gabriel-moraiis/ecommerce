@@ -18,7 +18,7 @@ const ItemCart = ({ item }) => {
           X
           <Price>
             {price}
-            $
+            R$
           </Price>
         </PricesContainer>
       </Description>

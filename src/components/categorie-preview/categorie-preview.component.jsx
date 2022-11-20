@@ -2,8 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import ProductCard from '../product-card/product-card.component';
 import { Container, Preview, Title } from './categorie-preview.styles';
 
-function CategoriePreview({ categorie }) {
-  const { title, items } = categorie;
+function CategoriePreview({ title, items }) {
   const navigate = useNavigate();
   const handleClickTitle = () => navigate(`/catalogo/${title}`);
   return (

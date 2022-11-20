@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Preview = styled.div`
   display: flex;
+  height: 450px;
 `;
 
 export const Title = styled.h2`
@@ -15,5 +16,5 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 `;
