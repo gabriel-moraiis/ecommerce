@@ -38,7 +38,10 @@ export const CartProvider = ({ children }) => {
     };
 
     const decrementItemToCart = (item) => {
-        if (item.quantity === 1) removeItemToCart(item);
+        if (item.quantity === 1) {
+        removeItemToCart(item);
+        return;
+        }
         const cartItemsMapped = cartItems.map((cartItem) => {
             if (cartItem.id === item.id) cartItem.quantity -= 1;
             return cartItem;
