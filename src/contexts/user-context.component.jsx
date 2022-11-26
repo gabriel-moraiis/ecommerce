@@ -12,7 +12,6 @@ const INITIAL_STATE = {
 };
 
 const userReducer = (state, action) => {
-    console.log(action);
     const { type, payload } = action;
 
     switch (type) {

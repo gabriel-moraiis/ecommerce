@@ -1,12 +1,59 @@
-import { createContext, useEffect, useState } from 'react';
+import {
+    useReducer, createContext, useEffect, useState,
+} from 'react';
 
 export const CartContext = createContext();
 
+const USER_ACTIONS_TYPES = {
+    SET_CART_ITEMS: 'SET_CART_ITEMS',
+    TOGGLE_CART: 'TOGGLE_CART',
+};
+
+const INITIAL_VALUES_STATE = {
+    isCartOpen: false,
+    cartItems: [],
+    cartCount: 0,
+    total: 0,
+};
+
+const cartReducer = (state, action) => {
+    const { type, payload } = action;
+
+    switch (type) {
+        case USER_ACTIONS_TYPES.SET_CART_ITEMS:
+            return {
+                ...state,
+                ...payload,
+            };
+        case USER_ACTIONS_TYPES.TOGGLE_CART:
+            return {
+                ...state,
+                isCartOpen: !state.isCartOpen,
+            };
+        default:
+            throw new Error(`Unhandled type ${type} in cartReducer`);
+    }
+};
+
 export const CartProvider = ({ children }) => {
-    const [isCartOpen, setIsCartOpen] = useState(false);
-    const [cartItems, setCartItems] = useState([]);
-    const [cartCount, setCartCount] = useState(0);
-    const [total, setTotal] = useState(0);
+    const [{
+        isCartOpen, cartItems, cartCount, total,
+    }, dispatch] = useReducer(cartReducer, INITIAL_VALUES_STATE);
+
+    const updateCartItemsReducer = (newCartItems) => {
+        const newItemsTotal = newCartItems.reduce((acc, cartItem) => {
+            return acc + cartItem.quantity;
+        }, 0);
+
+        const newTotalCart = newCartItems.reduce((acc, cartItem) => {
+            return acc + (cartItem.quantity * cartItem.price);
+        }, 0);
+
+        dispatch({
+            type: USER_ACTIONS_TYPES.SET_CART_ITEMS,
+            payload: { cartItems: newCartItems, total: newTotalCart, cartCount: newItemsTotal },
+        });
+    };
 
     const addItemToCart = (item) => {
         const itemExists = cartItems.find((product) => product.id === item.id);
@@ -15,18 +62,11 @@ export const CartProvider = ({ children }) => {
                 if (product.id === itemExists.id) product.quantity += 1;
                 return product;
             });
-            setCartItems([...cartItemsMap]);
+            updateCartItemsReducer(cartItemsMap);
         } else {
-            setCartItems([...cartItems, { ...item, quantity: 1 }]);
+            const newCartItems = [...cartItems, { ...item, quantity: 1 }];
+            updateCartItemsReducer(newCartItems);
         }
-    };
-
-    const calculateTotalCart = () => {
-        const totalCart = cartItems.reduce((acc, cartItem) => {
-            return acc + (cartItem.quantity * cartItem.price);
-        }, 0);
-
-        setTotal(totalCart);
     };
 
     const removeItemToCart = (item) => {
@@ -34,46 +74,32 @@ export const CartProvider = ({ children }) => {
             return cartItem.id !== item.id;
         });
 
-        setCartItems(cartItemsFiltered);
+        updateCartItemsReducer(cartItemsFiltered);
     };
 
     const decrementItemToCart = (item) => {
-        if (item.quantity === 1) removeItemToCart(item);
+        if (item.quantity === 1) {
+            removeItemToCart(item);
+            return;
+        }
         const cartItemsMapped = cartItems.map((cartItem) => {
             if (cartItem.id === item.id) cartItem.quantity -= 1;
             return cartItem;
         });
-
-        setCartItems(cartItemsMapped);
-    };
-
-    const countItemsCart = () => {
-        const itemsTotal = cartItems.reduce((acc, cartItem) => {
-            return acc + cartItem.quantity;
-        }, 0);
-
-        setCartCount(itemsTotal);
+        updateCartItemsReducer(cartItemsMapped);
     };
 
     const emptyCart = () => {
-        setCartItems([]);
+        const newCartItems = [];
+        updateCartItemsReducer(newCartItems);
     };
 
-    useEffect(() => {
-        countItemsCart();
-    }, [cartItems]);
-
-    useEffect(() => {
-        calculateTotalCart();
-    }, [cartItems]);
-
     const cartToggle = () => {
-        setIsCartOpen(!isCartOpen);
+        dispatch({ type: USER_ACTIONS_TYPES.TOGGLE_CART });
     };
 
     const value = {
         isCartOpen,
-        setIsCartOpen,
         cartToggle,
         cartItems,
         addItemToCart,
