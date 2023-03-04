@@ -9,7 +9,8 @@ export const BackgroundImg = styled.div`
 `;
 
 export const Container = styled.div`
-  min-width: 23%;
+  min-width: 31%;
+  /* min-width: 23%; */
   width: auto;
   height: 350px;
   margin-right: 20px;
