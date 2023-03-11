@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
+import { useSelector } from 'react-redux';
 import logo from '../../assets/images/logo.png';
 import CartIcon from '../../components/cart-icon/cart-icon.component';
 
@@ -8,13 +9,14 @@ import {
   Container, ContainerLinks, LinkContainer, LogoContainer,
 } from './navigation.styles';
 
-import { UserContext } from '../../contexts/user-context.component';
 import { signOutUser } from '../../utils/firebaseApp';
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
 import { CartContext } from '../../contexts/cart-context.component';
 
+import { selectCurrentUser } from '../../store/user/user.selector';
+
 function Navigation() {
-  const { currentUser } = useContext(UserContext);
+  const currentUser = useSelector(selectCurrentUser);
   const { isCartOpen } = useContext(CartContext);
 
   const handleClickSignOut = async () => {

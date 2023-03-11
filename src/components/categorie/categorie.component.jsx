@@ -1,28 +1,18 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { CategoriesContext } from '../../contexts/categoriesContext.component';
 
 import ProductCard from '../product-card/product-card.component';
 import { Container, ContainerProducts } from './categorie.styles';
+import { selectCategories } from '../../store/categories/category.selector';
 
 const Categorie = () => {
   const { categorieRoute } = useParams();
-  const { categories } = useContext(CategoriesContext);
+  const categories = useSelector(selectCategories);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    try {
-      const categorieFind = Object.keys(categories).find((categorie) => {
-        return categorie.toLowerCase() === categorieRoute.toLowerCase();
-      });
-      if (categorieFind) {
-        setProducts(categories[categorieFind]);
-      } else {
-        return;
-      }
-    } catch (error) {
-      console.log(error);
-    }
+    setProducts(categories[categorieRoute]);
   }, [categorieRoute, categories]);
   return (
     <Container>

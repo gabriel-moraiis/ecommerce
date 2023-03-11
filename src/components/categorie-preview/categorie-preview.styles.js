@@ -6,10 +6,11 @@ export const Preview = styled.div`
 `;
 
 export const Title = styled.h2`
-  width: 5%;
+  width: 100%;
   margin-bottom: 16px;
   cursor: pointer;
   text-transform: uppercase;
+  text-align: center;
 `;
 
 export const Container = styled.div`
